@@ -7,11 +7,13 @@ export default function TweetInput(props) {
       <AvatarIcon />
 
       <textarea
+        id="tx"
         value={props.value}
         name="new-tweet-input"
         type="text"
         placeholder="What's Happening?"
         onChange={props.handleOnChange}
+        // onFocus={() => getElementById("tx").classList.add("expanded")}
       ></textarea>
 
       <SmileIcon />

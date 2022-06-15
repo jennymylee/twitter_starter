@@ -6,7 +6,7 @@
 }
 .card {
   background: white;
-  height: 220px;
+  height: 280px;
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@
 }
 .card-bg {
   flex: 1;
-  background: var(--twitter-blue);
+  background-color: rgb(142, 70, 160);
 }
 .card-content {
   flex: 1;
@@ -24,9 +24,9 @@
 .card-content .fa-stack {
   background: var(--twitter-blue);
   color: white;
-  padding: 20px;
+  /* padding: 20px; */
   border-radius: 50%;
-  border: solid 3px white;
+  /* border: solid 3px white; */
   margin-left: 10px;
   transform: translateY(-23px);
 }
@@ -56,13 +56,35 @@
   height: 60px;
   margin: -20px 0px 0px 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 .card-footer p {
   font-size: 14px;
   color: var(--twitter-dark-gray);
 }
+
+.subtitle {
+  font-size: 14px;
+  color: var(--twitter-dark-gray);
+  padding-left: 20px;
+  
+}
+
+.bio {
+  font-size: 16px;
+  color: black;
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+.info {
+  color: var(--twitter-blue);
+  font-size: 14px;
+  padding-left: 20px;
+  margin-bottom: 5px;
+}
+
 .card-footer span.metric {
   font-size: 20px;
   font-weight: bold;
