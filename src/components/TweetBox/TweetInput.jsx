@@ -1,5 +1,6 @@
 import * as React from "react";
 import AvatarIcon from "../AvatarIcon/AvatarIcon";
+import Hashtags from "react-highlight-hashtags";
 
 export default function TweetInput(props) {
   return (

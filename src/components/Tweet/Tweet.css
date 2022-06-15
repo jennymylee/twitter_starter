@@ -57,7 +57,9 @@
 .tweet-footer span:hover i {
   color: var(--twitter-blue);
 }
-
+.hash {
+  color:purple;
+}
 .tweet-footer span {
   margin-right: 40px;
   color: var(--twitter-dark-gray);

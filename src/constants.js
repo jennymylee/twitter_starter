@@ -13,7 +13,7 @@ export const firstTweet = {
   text: `This is a tweet about something that excites us greatly. We're going to proclaim our joy on social media and be showered with praises.`,
   comments: 445,
   retweets: 121,
-  likes: 165000,
+  likes: 165,
 }
 
 export const sampleNewTweet = {
