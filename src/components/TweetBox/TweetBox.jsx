@@ -3,11 +3,13 @@ import TweetInput from "./TweetInput";
 import "./TweetBox.css";
 
 export default function TweetBox(props) {
-  const handleOnTweetTextChange = (event) => {
+  let handleOnTweetTextChange = (event) => {
     props.setTweetText(event.target.value);
   };
+
   const handleOnSubmit = () => {
     console.log("before", props.tweetText);
+
     let newTweet = {
       name: props.userProfile.name,
       handle: props.userProfile.handle,
@@ -17,12 +19,17 @@ export default function TweetBox(props) {
       likes: 0,
       id: props.tweets.length,
     };
+    props.setTweets((currentTweets) => [...currentTweets, newTweet]);
 
-    props.setTweets(props.tweets.concat([newTweet]));
-    props.setTweetText("");
+    // props.setTweets(props.tweets.concat([newTweet]));
+    // props.setTweets(...props.tweets, newTweet);
+
+    props.setTweetText(``);
     console.log("after", props.tweetText);
+
     props.userProfile.numTweets = props.userProfile.numTweets++;
   };
+
   return (
     <div className="tweet-box">
       <TweetInput
@@ -35,11 +42,11 @@ export default function TweetBox(props) {
         <TweetCharacterCount tweetText={props.tweetText} />
 
         <TweetSubmitButton
-          disabled={
-            props.tweetText.length > 0 && props.tweetText.length < 141
-              ? true
-              : false
-          }
+          // disabled={
+          //   props.tweetText.length > 0 && props.tweetText.length < 141
+          //     ? false
+          //     : true
+          // }
           handleOnSubmit={handleOnSubmit}
         />
       </div>
@@ -60,10 +67,16 @@ export function TweetBoxIcons() {
 
 export function TweetCharacterCount(props) {
   // ADD CODE HERE
-  return <span className="tweet-length">{140 - props.tweetText.length}</span>;
+  if (140 - props.tweetText.length < 0) {
+    return (
+      <span className="tweet-length red">{140 - props.tweetText.length}</span>
+    );
+  } else {
+    return <span className="tweet-length">{140 - props.tweetText.length}</span>;
+  }
 }
 
-export function TweetSubmitButton({ handleOnSubmit }) {
+export function TweetSubmitButton({ handleOnSubmit = () => {} }) {
   return (
     <div className="tweet-submit">
       <i className="fas fa-plus-circle"></i>
