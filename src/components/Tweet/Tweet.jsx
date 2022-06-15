@@ -11,9 +11,9 @@ export default function Tweet({ tweet }) {
       </div>
 
       <div className="tweet-content">
-        <TweetUserInfo />
+        <TweetUserInfo name={tweet.name} handle={tweet.handle}/>
         <p className="tweet-text"></p>
-        <TweetFooter />
+        <TweetFooter numComments={tweet.comments} numRetweets={tweet.retweets} numLikes={tweet.likes}/>
       </div>
     </div>
   )
@@ -34,6 +34,7 @@ export function TweetUserInfo({ name, handle }) {
 }
 
 export function TweetFooter({ numComments, numRetweets, numLikes }) {
+  console.log(numLikes);
   return (
     <div className="tweet-footer">
       <span>

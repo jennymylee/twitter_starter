@@ -6,7 +6,7 @@ export default function Navbar({ navLinks }) {
   return (
     <nav>
       <div className="navbar-container">
-        <NavLinks />
+        <NavLinks navLinks={navLinks}/>
         <TwitterIcon />
         <SearchBar />
         <TweetButton />
@@ -16,14 +16,14 @@ export default function Navbar({ navLinks }) {
 }
 
 export function NavLinks({ navLinks }) {
-  return <ul className="nav-links">{/* WRITE CODE HEREe */}</ul>
+  return <ul className="nav-links">{navLinks.map((navLinks, i) => (<NavLink key={i} navLink={navLinks}/>))}</ul>
 }
 
 export function NavLink({ navLink }) {
   return (
     <li className={navLink.className}>
       <i className={navLink.icon}></i>
-      <span></span>
+      <span>{navLink.label}</span>
     </li>
   )
 }
