@@ -16,7 +16,7 @@ export default function Navbar({ navLinks }) {
 }
 
 export function NavLinks({ navLinks }) {
-  return <ul className="nav-links">{/* WRITE CODE HERE */}</ul>
+  return <ul className="nav-links">{/* WRITE CODE HEREe */}</ul>
 }
 
 export function NavLink({ navLink }) {
